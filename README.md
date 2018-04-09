@@ -1,24 +1,18 @@
-# LifeSaver
+# Neo9 tools
 
-[![Build Status](https://travis-ci.org/victorboissiere/lifesaver.svg?branch=master)](https://travis-ci.org/victorboissiere/lifesaver)
-
-LifeSafer is a tool to get started on any shell environment (vps, docker, etc.)
-by installing only the tools that you need.
+Neo9 tools is a project to quickly install required softwares on any linux based distribution.
 
 # Getting started
 
 With curl
 ```bash
-curl https://ls.gitcommit.fr -fsSL | bash -s minimal $USER
+curl https://raw.githubusercontent.com/neo9/lifesaver/master/install.sh -fsSL | bash -s docker $USER
 ```
 
 ```bash
-wget -O - https://ls.gitcommit.fr | bash -s minimal $USER
+wget -O - https://raw.githubusercontent.com/neo9/lifesaver/master/install.sh | bash -s docker $USER
 ```
-
-If you do not trust the `https://ls.gitcommit.fr`, it is just a simple redirection to `https://raw.githubusercontent.com/victorboissiere/lifesaver/master/install.sh`.
-
-The `minimal` keyword is an installation mode. Check all installation modes
+The `docker` keyword is an installation mode. Check all installation modes
 in `config.yaml`.
 
 # Configuration
@@ -29,19 +23,15 @@ simply modify the `config.yaml` file.
 ## Config file example
 
 ```yaml
-minimal:
-  description: Install basic shell configuration
+ansible:
+  description: Install ansible with required packages
   programs:
-    - vim
-    - curl
-    - zsh
+    - python-passlib
   steps:
-    - description: Installing vim configuration
+    - description: Install passlib
       commands:
-        - [CP] ./softwares/vim/.vimrc ~/.vimrc
-        - curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        - ["vim", "+silent", "+PlugInstall", "+qall"]
-        - [CHOWN] ~/.vim
+        - pip3 install -i https://pypi.python.org/simple/ --upgrade pip
+        - pip3 install ansible
 ```
 
 `programs` and `steps` are optionals

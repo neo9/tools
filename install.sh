@@ -26,7 +26,7 @@ if ! [ -z "$2" ]; then
 fi
 
 rm -rf /tmp/lifesaver
-cd /tmp && git clone https://github.com/victorboissiere/lifesaver
+cd /tmp && git clone https://github.com/neo9/lifesaver
 echo "Executing as user ${USER}"
 chown -R ${USER}:${USER} /tmp/lifesaver
 
