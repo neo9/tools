@@ -9,6 +9,8 @@ With curl
 curl https://raw.githubusercontent.com/neo9/lifesaver/master/install.sh -fsSL | bash -s docker $USER
 ```
 
+Or with wget
+
 ```bash
 wget -O - https://raw.githubusercontent.com/neo9/lifesaver/master/install.sh | bash -s docker $USER
 ```
