@@ -6,13 +6,13 @@ Neo9 tools is a project to quickly install required softwares on any linux based
 
 With curl
 ```bash
-curl https://raw.githubusercontent.com/neo9/lifesaver/master/install.sh -fsSL | bash -s docker $USER
+curl https://raw.githubusercontent.com/neo9/tools/master/install.sh -fsSL | bash -s docker $USER
 ```
 
 Or with wget
 
 ```bash
-wget -O - https://raw.githubusercontent.com/neo9/lifesaver/master/install.sh | bash -s docker $USER
+wget -O - https://raw.githubusercontent.com/neo9/tools/master/install.sh | bash -s docker $USER
 ```
 The `docker` keyword is an installation mode. Check all installation modes
 in `config.yaml`.

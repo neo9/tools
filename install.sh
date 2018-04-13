@@ -25,12 +25,12 @@ if ! [ -z "$2" ]; then
     USER=$2
 fi
 
-rm -rf /tmp/lifesaver
-cd /tmp && git clone https://github.com/neo9/lifesaver
+rm -rf /tmp/tools
+cd /tmp && git clone https://github.com/neo9/tools
 echo "Executing as user ${USER}"
-chown -R ${USER}:${USER} /tmp/lifesaver
+chown -R ${USER}:${USER} /tmp/tools
 
-cd /tmp/lifesaver && python3 ./src/install.py "${PACKAGE_MANAGER}" $1 ${USER}
+cd /tmp/tools && python3 ./src/install.py "${PACKAGE_MANAGER}" $1 ${USER}
 
-rm -rf /tmp/lifesaver
+rm -rf /tmp/tools
 
