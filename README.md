@@ -1,3 +1,4 @@
+# No longer actively maintained
 # Neo9 tools
 
 Neo9 tools is a project to quickly install required softwares on any linux based distribution.
